@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "BlogPost": {
+      "title": "BlogPost",
+      "description": "Represents an article or post published in the blog",
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "The category/area of the article (e.g. DIREITO CIVIL)"
+        },
+        "date": {
+          "type": "string",
+          "description": "The formatted date when the article was published"
+        },
+        "title": {
+          "type": "string",
+          "description": "The main headline or title of the blog post"
+        },
+        "excerpt": {
+          "type": "string",
+          "description": "A short summary or teaser introduction of the post"
+        },
+        "content": {
+          "type": "string",
+          "description": "The full body markdown-like text of the article"
+        },
+        "image": {
+          "type": "string",
+          "description": "URL of the cover or featured image"
+        },
+        "readTime": {
+          "type": "string",
+          "description": "Estimated reading duration (e.g. 5 min de leitura)"
+        }
+      },
+      "required": [
+        "category",
+        "date",
+        "title",
+        "excerpt",
+        "content",
+        "image",
+        "readTime"
+      ]
+    },
+    "SystemUser": {
+      "title": "SystemUser",
+      "description": "Represents an administrative user with portal access",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The full name of the user"
+        },
+        "email": {
+          "type": "string",
+          "description": "The corporate email address"
+        },
+        "role": {
+          "type": "string",
+          "description": "System role",
+          "enum": ["Administrador", "Advogado", "Secretário", "Editor"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Account status",
+          "enum": ["Ativo", "Inativo"]
+        },
+        "password": {
+          "type": "string",
+          "description": "Plaintext or hashed access password"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of user registration"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional administrative notes"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "role",
+        "status",
+        "password",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/blog_posts/{postId}": {
+      "schema": "BlogPost",
+      "description": "Collection of blog posts published by the firm's headless CMS"
+    },
+    "/system_users/{userId}": {
+      "schema": "SystemUser",
+      "description": "Collection of administrators and staff authorized to access the Admin Panel"
+    }
+  }
+}

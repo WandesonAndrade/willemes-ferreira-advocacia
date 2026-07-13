@@ -1,0 +1,6 @@
+{
+  "name": "Willemes Ferreira Advocacia",
+  "description": "Website oficial do escritório de advocacia Willemes Ferreira (OAB/MA 21.031). Especialista em Direito Civil, Trabalhista, Previdenciário e de Família.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

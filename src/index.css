@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Juris & Authority Palette matching the exact specs */
+  --color-primary: #022448; /* Supreme Navy */
+  --color-primary-container: #1e3a5f;
+  --color-on-primary-container: #8aa4cf;
+  
+  --color-secondary: #515f74; /* Lead Gray */
+  --color-secondary-container: #d5e3fc;
+  
+  --color-tertiary: #b45309; /* Warm Bronze-Gold */
+  --color-tertiary-container: #622900;
+  --color-tertiary-fixed-dim: #ffb68e;
+  
+  --color-background: #faf8ff; /* Parchment / Soft Surface background */
+  --color-surface: #ffffff; /* Pure White Card */
+  --color-surface-container-low: #f2f3ff;
+  --color-surface-container-highest: #dae2fd;
+  
+  --color-on-background: #131b2e; /* Gavel Black */
+  --color-on-surface-variant: #43474e;
+  --color-outline-variant: #c4c6cf;
+  
+  --spacing-section-gap: 80px;
+  --spacing-margin-desktop: 48px;
+  --spacing-margin-mobile: 16px;
+}
+
+/* Custom transitions and scroll margins */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Base styles for Typography and styling override if needed */
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+}
+
+/* Premium Webkit and Firefox scrollbar utilities */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(2, 36, 72, 0.15); /* Primary color low opacity */
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-tertiary); /* Golden/Bronze hover thumb */
+}
+
+/* Firefox scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(2, 36, 72, 0.15) transparent;
+}
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(2, 36, 72, 0.95) 0%, rgba(2, 36, 72, 0.4) 100%);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-tertiary-fixed-dim);
+  box-shadow: 0 10px 30px -15px rgba(2, 36, 72, 0.1);
+}
